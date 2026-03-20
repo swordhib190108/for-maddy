@@ -1,0 +1,505 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>For You</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="paper"></div>
+
+  <button class="music-toggle" type="button" aria-pressed="false">
+    <span>🎵</span>
+    <span class="music-state">Off</span>
+  </button>
+
+  <main class="stage">
+
+    <!-- SCENE 1 -->
+    <section class="scene scene-1 active" id="scene1">
+      <header class="intro">
+        <p class="line line-1">I wrote this while we were apart.</p>
+      </header>
+
+      <div class="center">
+        <div class="envelope-wrap">
+          <div class="envelope" id="envelope" tabindex="0">
+
+            <div class="env-back"></div>
+
+            <div class="letter">
+              <div class="letter-body">
+                <p class="line line-2">
+                  I didn’t say much this month, but that doesn’t mean I felt less.
+                </p>
+
+                <p>
+                  There were so many moments I wanted to share with you — something funny,
+                  something random, or just something that reminded me of you.
+                </p>
+
+                <p>
+                  Instead of sending them, I kept them here… and made this for you while we were apart.
+                </p>
+
+                <p>
+                  I guess this is my way of saying that even in the quiet, even with distance,
+                  my heart never really learned how to pause.
+                </p>
+
+                <p class="line line-3">
+                  thank you for opening this.
+                </p>
+              </div>
+            </div>
+
+            <div class="env-front"></div>
+            <div class="env-flap"></div>
+
+            <button class="seal" id="seal" type="button" aria-label="Open letter">
+              <img class="seal-img" src="assets/catnose.png" alt="">
+            </button>
+          </div>
+
+          <p class="hint" id="hint">Tap the seal.</p>
+
+          <button class="primary" id="primaryBtn" hidden>
+            Open this when you're ready
+          </button>
+
+          <audio id="bgm" preload="auto" loop>
+            <source src="assets/music.mp3" type="audio/mpeg">
+          </audio>
+        </div>
+      </div>
+    </section>
+
+    <!-- SCENE 2 -->
+    <section class="scene scene-2" id="scene2">
+      <div class="scene2-wrap">
+
+        <div class="scene2-header">
+          <h2 class="scene2-title">These are some moments I kept with me.</h2>
+        </div>
+
+        <div class="polaroid-table" id="polaroidTable">
+
+          <button class="polaroid p1"
+            data-id="1"
+            data-title="something I wanted to tell you"
+            data-img="assets/mad1.jpg"
+            data-text="There were so many small moments during the day where something would happen and my first thought was, I should tell her this.<br><br>Sometimes it was something funny, sometimes it was something completely random.<br><br>And then I’d pause for a second and remember I couldn’t send that message yet.<br><br>So I kept those little moments with me instead.">
+            <span class="polaroid-frame">
+              <span class="polaroid-photo" style="--img:url('assets/mad1.jpg')"></span>
+              <span class="polaroid-caption">something I wanted to tell you</span>
+            </span>
+          </button>
+
+          <button class="polaroid p2"
+            data-id="2"
+            data-title="a moment I almost shared"
+            data-img="assets/mad2.jpg"
+            data-text="One day something happened that made me smile for a second.<br><br>Without even thinking about it, I reached for my phone — the same way I always do when I want to tell you something.<br><br>And for a moment it felt so normal.<br><br>Until I remembered I had to wait.">
+            <span class="polaroid-frame">
+              <span class="polaroid-photo" style="--img:url('assets/mad2.jpg')"></span>
+              <span class="polaroid-caption">a moment I almost shared</span>
+            </span>
+          </button>
+
+          <button class="polaroid p3"
+            data-id="3"
+            data-title="one of those little thoughts"
+            data-img="assets/mad3.jpg"
+            data-text="You know those random thoughts that suddenly pop into your head during the day?<br><br>The kind that aren’t really important, but you still want to send them anyway.<br><br>I had a lot of those this month.<br><br>Little things I would’ve shared with you without even thinking twice.">
+            <span class="polaroid-frame">
+              <span class="polaroid-photo" style="--img:url('assets/mad3.jpg')"></span>
+              <span class="polaroid-caption">one of those little thoughts</span>
+            </span>
+          </button>
+
+          <button class="polaroid p4"
+            data-id="4"
+            data-title="a quiet moment"
+            data-img="assets/mad4.jpg"
+            data-text="One evening everything around me got really quiet for a moment.<br><br>Nothing special was happening, nothing dramatic.<br><br>But it made me realize how used I am to talking to you, even about the most ordinary things.">
+            <span class="polaroid-frame">
+              <span class="polaroid-photo" style="--img:url('assets/mad4.jpg')"></span>
+              <span class="polaroid-caption">a quiet moment</span>
+            </span>
+          </button>
+
+          <button class="polaroid p5"
+            data-id="5"
+            data-title="this reminded me of you"
+            data-img="assets/mad5.jpg"
+            data-text="I saw something small that reminded me of you.<br><br>Not in a big obvious way — just in that quiet way where someone suddenly comes to mind without warning.<br><br>And for a second it felt like you were right there in that moment with me.">
+            <span class="polaroid-frame">
+              <span class="polaroid-photo" style="--img:url('assets/mad5.jpg')"></span>
+              <span class="polaroid-caption">this reminded me of you</span>
+            </span>
+          </button>
+
+          <button class="polaroid p6"
+            data-id="6"
+            data-title="another day without you here"
+            data-img="assets/mad6.jpg"
+            data-text="It was just a normal day.<br><br>Nothing unusual happened, nothing exciting either.<br><br>But even on days like that, there were moments where it felt like something was missing.">
+            <span class="polaroid-frame">
+              <span class="polaroid-photo" style="--img:url('assets/mad6.jpg')"></span>
+              <span class="polaroid-caption">another day without you here</span>
+            </span>
+          </button>
+
+          <button class="polaroid p7"
+            data-id="7"
+            data-title="one of the things I noticed"
+            data-img="assets/mad7.jpg"
+            data-text="I started noticing something this month.<br><br>How often I catch myself thinking, I wonder what she would say about this.<br><br>Even when you’re not there, somehow your voice still ends up in my thoughts.">
+            <span class="polaroid-frame">
+              <span class="polaroid-photo" style="--img:url('assets/mad7.jpg')"></span>
+              <span class="polaroid-caption">one of the things I noticed</span>
+            </span>
+          </button>
+
+          <button class="polaroid p8"
+            data-id="8"
+            data-title="I wish you saw this too"
+            data-img="assets/mad8.jpg"
+            data-text="There were moments where I saw something and instantly thought you would’ve liked it.<br><br>The kind of moment where you instinctively want to turn to someone and say, look at this.">
+            <span class="polaroid-frame">
+              <span class="polaroid-photo" style="--img:url('assets/mad8.jpg')"></span>
+              <span class="polaroid-caption">I wish you saw this too</span>
+            </span>
+          </button>
+
+          <button class="polaroid special p9"
+            data-id="9"
+            data-title="the one I kept for last"
+            data-img="assets/mad9.jpg"
+            data-text="Out of all the little moments this month, there was one feeling that stayed the most.<br><br>It wasn’t about anything big or dramatic.<br><br>It was just the quiet thought that these moments would’ve been better if you were there for them.">
+            <span class="polaroid-frame">
+              <span class="polaroid-photo" style="--img:url('assets/mad9.jpg')"></span>
+              <span class="polaroid-caption">the one I kept for last</span>
+            </span>
+          </button>
+
+          <button class="polaroid p10"
+            data-id="10"
+            data-title="still thinking about this"
+            data-img="assets/mad10.jpg"
+            data-text="Even when nothing was really happening, you still crossed my mind more times than you probably realize.<br><br>Sometimes for no reason at all.<br><br>Just one of those quiet thoughts that shows up and stays for a while.">
+            <span class="polaroid-frame">
+              <span class="polaroid-photo" style="--img:url('assets/mad10.jpg')"></span>
+              <span class="polaroid-caption">still thinking about this</span>
+            </span>
+          </button>
+
+        </div>
+
+        <div class="scene2-footer" id="scene2Footer">
+          <button class="primary show" id="toScene3" type="button">
+            Go to the next part →
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SCENE 3 -->
+    <section class="scene scene-3" id="scene3">
+      <div class="scene3-wrap">
+        <div class="scene3-content">
+
+          <button class="primary scene3-backbtn show" id="backToScene2" type="button">
+            ← Back to memories
+          </button>
+
+          <h2 class="scene3-title reveal-1">And then… there’s August.</h2>
+
+          <div class="scene3-countdown reveal-2">
+            <p class="scene3-kicker">The first time we finally see each other</p>
+            <p class="scene3-date">August 1</p>
+
+            <div class="countdown-grid">
+              <div class="count-box">
+                <span class="count-value" id="days">000</span>
+                <span class="count-label">days</span>
+              </div>
+              <div class="count-box">
+                <span class="count-value" id="hours">00</span>
+                <span class="count-label">hours</span>
+              </div>
+              <div class="count-box">
+                <span class="count-value" id="minutes">00</span>
+                <span class="count-label">minutes</span>
+              </div>
+              <div class="count-box">
+                <span class="count-value" id="seconds">00</span>
+                <span class="count-label">seconds</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="scene3-letter reveal-3">
+            <p>Sometimes I try to imagine what that first moment in August will actually feel like.</p>
+            <p>The moment where you stop being a voice through my phone, a name on my screen, or a picture I keep coming back to… and suddenly you're standing right there in front of me.</p>
+            <p>Not pixels. Not distance. Not a screen between us. Just you… real and right there.</p>
+            <p>I think about the first hug. The moment where all the distance that existed between us finally disappears in one second.</p>
+            <p>Maybe we'll both laugh. Maybe it will feel surreal. Maybe the world will feel strangely quiet for a moment.</p>
+            <p>But I know one thing — when that moment finally happens, I'll understand that every bit of waiting was worth it.</p>
+          </div>
+
+          <p class="scene3-final reveal-4">
+            Until that day comes…<br>
+            I’ll keep counting.
+          </p>
+
+          <button class="primary scene3-nextbtn reveal-4" id="toScene4" type="button">
+            And I'm still not done →
+          </button>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SCENE 4 -->
+    <section class="scene scene-4" id="scene4">
+      <div class="scene4-wrap">
+        <div class="scene4-content">
+
+          <button class="primary scene4-backbtn show" id="backToScene3" type="button">
+            ← Back to August
+          </button>
+
+          <h2 class="scene4-title">The Future I Keep Imagining</h2>
+          <p class="scene4-intro">
+            When I think about you coming here, my mind starts imagining little moments.
+          </p>
+
+          <div class="future-path" id="futurePath">
+            <button class="future-point fp1" data-future="airport" type="button" aria-label="Airport">
+              <span class="future-emoji">✈️</span>
+              <span class="future-label">Airport</span>
+            </button>
+
+            <button class="future-point fp2" data-future="walk" type="button" aria-label="First walk">
+              <span class="future-emoji">👣</span>
+              <span class="future-label">First walk</span>
+            </button>
+
+            <button class="future-point fp3" data-future="around" type="button" aria-label="Showing you around">
+              <span class="future-emoji">📍</span>
+              <span class="future-label">Showing you around</span>
+            </button>
+
+            <button class="future-point fp4" data-future="food" type="button" aria-label="Getting food">
+              <span class="future-emoji">🍽️</span>
+              <span class="future-label">Getting food</span>
+            </button>
+
+            <button class="future-point fp5" data-future="photo" type="button" aria-label="First photo">
+              <span class="future-emoji">📸</span>
+              <span class="future-label">First photo</span>
+            </button>
+
+            <button class="future-point fp6" data-future="quiet" type="button" aria-label="Quiet moment">
+              <span class="future-emoji">🌙</span>
+              <span class="future-label">Quiet moment</span>
+            </button>
+          </div>
+
+          <div class="scene4-special" id="scene4Special">
+            <p class="scene4-special-line">There’s one moment I think about the most.</p>
+            <button class="primary show" id="whatMomentBtn" type="button">
+              What moment?
+            </button>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SCENE 5 -->
+    <section class="scene scene-5" id="scene5">
+      <div class="scene5-wrap">
+        <div class="scene5-content">
+
+          <button class="primary scene5-backbtn show" id="backToScene4" type="button">
+            ← Back to the future I keep imagining
+          </button>
+
+          <h2 class="scene5-title">Sometimes I imagine even further…</h2>
+          <p class="scene5-intro">
+            And when my mind goes past August, it starts imagining a whole life with you.
+          </p>
+
+          <div class="dream-sky" id="dreamSky">
+            <button class="dream-star ds1" data-dream="engagement" type="button" aria-label="Our engagement">
+              <span class="dream-glow">✦</span>
+              <span class="dream-label">our engagement</span>
+            </button>
+
+            <button class="dream-star ds2" data-dream="wedding" type="button" aria-label="Our wedding day">
+              <span class="dream-glow">✦</span>
+              <span class="dream-label">our wedding day</span>
+            </button>
+
+            <button class="dream-star ds3" data-dream="home" type="button" aria-label="Our home">
+              <span class="dream-glow">✦</span>
+              <span class="dream-label">our home</span>
+            </button>
+
+            <button class="dream-star ds4" data-dream="travels" type="button" aria-label="Our travels">
+              <span class="dream-glow">✦</span>
+              <span class="dream-label">our travels</span>
+            </button>
+
+            <button class="dream-star ds5" data-dream="old" type="button" aria-label="Growing old with you">
+              <span class="dream-glow">✦</span>
+              <span class="dream-label">growing old with you</span>
+            </button>
+          </div>
+
+          <p class="scene5-ending" id="scene5Ending">
+            I don’t just imagine loving you now.<br>
+            I imagine loving you for a very long time.
+          </p>
+
+          <button class="primary show" id="toScene6" type="button">
+            One more thing… →
+          </button>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SCENE 6 -->
+    <section class="scene scene-6" id="scene6">
+      <div class="scene6-wrap">
+        <div class="scene6-content">
+
+          <button class="primary scene6-backbtn show" id="backToScene5" type="button">
+            ← Back to the stars
+          </button>
+
+          <div class="quiz-shell" id="quizShell">
+
+            <div class="quiz-card quiz-start active" id="quizStartCard">
+              <div class="quiz-topline">Final little game 💛</div>
+              <h2 class="quiz-title">Now let me see how well you know me.</h2>
+              <p class="quiz-subtitle">Be honest… I’m watching 👀</p>
+              <button class="primary show quiz-start-btn" id="startQuizBtn" type="button">
+                Start
+              </button>
+            </div>
+
+            <div class="quiz-card" id="quizQuestionCard">
+              <div class="quiz-progress" id="quizProgress">Question 1 / 10</div>
+              <h3 class="quiz-question" id="quizQuestionText">Question text goes here</h3>
+
+              <div class="quiz-options" id="quizOptions"></div>
+
+              <p class="quiz-feedback" id="quizFeedback"></p>
+            </div>
+
+            <div class="quiz-card quiz-result-card" id="quizResultCard">
+              <div class="quiz-topline">Your result ✨</div>
+              <h2 class="quiz-result-title" id="quizResultTitle">You know me pretty well.</h2>
+              <p class="quiz-result-score" id="quizResultScore">8 / 10</p>
+              <p class="quiz-result-text" id="quizResultText">I guess I chose the right person.</p>
+
+              <div class="quiz-final-line" id="quizFinalLine">
+                <p>
+                  Maybe the real reason I made all of this was because I didn’t know how else to hold you close while distance kept getting in the way. I wanted to give you something that felt like me, something you could move through and feel, something that would show you that in every quiet moment, in every missed thought, in every little future I keep replaying in my head, it has always been you. You have become such a soft and permanent part of my heart that even when life asks me to be patient, even when time makes us wait, even when all I can do is imagine the sound of your laugh beside me or the feeling of finally having you in front of me instead of on a screen, I still find myself choosing you in a hundred small ways without even thinking about it. I think about you in the ordinary parts of my day, in the in-between moments, in the future, in the far future, and in the kind of forever that feels too big to explain properly, because somehow what I feel for you has grown beyond words and beyond distance and beyond anything simple. And if there is one thing I hope this whole thing leaves with you, it’s this: you are not just someone I care about, not just someone I miss, not just someone I dream about when I let my mind wander too far — you are someone I have let into the deepest parts of me, someone I see in my present, in my plans, in my prayers, and in every version of tomorrow that feels worth reaching. So if you ever wonder what all of this meant, what every scene meant, what every word was trying to say, the answer is the same every single time — I love you in every quiet way I know how, I carry you with me more than I could ever fully explain, and at the end of all of this, after the waiting, after the distance, after every little thing I made just to bring you closer to me, it is still you, it has always been you, and I think some part of me will keep choosing you for a very, very long time.
+                </p>
+
+                <p>
+                  And maybe one day, when all of this distance is just something we look back on instead of something we have to live through, we’ll realize how much it quietly built between us — how it taught me to love you in patience, how it made me notice the smallest things about you, how it turned every moment with you into something I hold a little more carefully. Maybe I’ll look at you in person and think about all the nights I had to imagine that moment instead, all the times I wished I could just reach out and be there with you, and I’ll finally get to replace all of that distance with something real. And I think in that moment, I won’t need to say much, because everything I’ve been trying to say through all of this will already be there, in the way I look at you, in the way I stay, in the way I choose you without hesitation.
+                </p>
+
+                <p>
+                  Because what I feel for you isn’t something temporary, it isn’t something that fades with time or distance or silence — it’s something that has quietly settled into me, something that feels steady and certain in a way I didn’t expect but now can’t imagine losing. You’ve become part of how I think, part of how I see the future, part of how I understand what it means to truly care about someone, and I don’t think that’s something that just disappears. It stays. You stay.
+                </p>
+
+                <p>
+                  And if there’s anything I want you to carry with you after this, after every little thing I made, after every word you just read, it’s the feeling that you are deeply wanted, deeply valued, and deeply loved in a way that doesn’t need constant noise to exist — a quiet kind of love that stays even in silence, even in distance, even in waiting. The kind of love that doesn’t rush, but doesn’t leave either.
+                </p>
+
+                <p class="quiz-final-closer">
+                  It is still you. It will always be you.
+                </p>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Scene 2 overlay -->
+  <div class="overlay" id="overlay" aria-hidden="true">
+    <div class="overlay-card" role="dialog" aria-modal="true" aria-label="Memory">
+      <button class="overlay-close" id="overlayClose" type="button" aria-label="Close">✕</button>
+
+      <div class="overlay-polaroid">
+        <div class="overlay-photo" id="overlayPhoto"></div>
+        <div class="overlay-caption" id="overlayTitle">A memory</div>
+      </div>
+
+      <div class="overlay-text" id="overlayText"></div>
+    </div>
+  </div>
+
+  <!-- Scene 4 animation layer -->
+  <div class="future-anim-layer" id="futureAnimLayer" aria-hidden="true">
+    <div class="anim-plane">✈️</div>
+    <div class="anim-footsteps">👣 👣 👣</div>
+    <div class="anim-pin">📍</div>
+    <div class="anim-food">🍽️ ✨</div>
+    <div class="anim-camera">📸</div>
+    <div class="anim-moon">🌙</div>
+  </div>
+
+  <!-- Scene 4 future modal -->
+  <div class="future-modal" id="futureModal" aria-hidden="true">
+    <div class="future-modal-card" role="dialog" aria-modal="true" aria-label="Future moment">
+      <button class="future-close" id="futureClose" type="button" aria-label="Close">✕</button>
+      <div class="future-modal-icon" id="futureModalIcon">✈️</div>
+      <h3 class="future-modal-title" id="futureModalTitle">Airport</h3>
+      <div class="future-modal-text" id="futureModalText"></div>
+    </div>
+  </div>
+
+  <!-- Special typed reveal -->
+  <div class="special-overlay" id="specialOverlay" aria-hidden="true">
+    <div class="special-card">
+      <button class="future-close" id="specialClose" type="button" aria-label="Close">✕</button>
+      <h3 class="special-title">The moment I think about the most</h3>
+      <div class="special-typed" id="specialTyped"></div>
+      <p class="special-final" id="specialFinal">And I can’t wait for that moment with you.</p>
+      <button class="primary show special-next" id="specialToScene5" type="button">
+        Sometimes I imagine even further →
+      </button>
+    </div>
+  </div>
+
+  <!-- Scene 5 dream modal -->
+  <div class="dream-modal" id="dreamModal" aria-hidden="true">
+    <div class="dream-modal-card" role="dialog" aria-modal="true" aria-label="Future dream">
+      <button class="future-close" id="dreamClose" type="button" aria-label="Close">✕</button>
+      <div class="dream-modal-icon" id="dreamModalIcon">✦</div>
+      <h3 class="dream-modal-title" id="dreamModalTitle">Our engagement</h3>
+      <div class="dream-modal-text" id="dreamModalText"></div>
+    </div>
+  </div>
+
+<script src="script.js"></script>
+</body>
+</html>
